@@ -1,4 +1,5 @@
 # import libraries
+import sys
 import pandas as pd
 import numpy as np
 from sqlalchemy import create_engine
@@ -59,6 +60,8 @@ def clean_data(df):
     # drop duplicates
     df.drop_duplicates(inplace = True)
 
+    return df
+
     
 
 def save_data(df, database_filename):
@@ -74,7 +77,7 @@ def save_data(df, database_filename):
     None
     """
     engine = create_engine('sqlite:///{}'.format(database_filename))
-    df.to_sql('messages', engine, index=False, if_exists='replace')
+    df.to_sql('messages', engine, index=False)
 
 def main():
     """Main function to run the ETL pipeline
