@@ -16,7 +16,7 @@ The motivation behind this machine learning project is to build a web applicatio
 ## Graphs and Screenshot
 ![Genre Distribution](./images/genre_distribution.png)
 ![Message Categories](./images/category_distribution.png)
-![Web App Screenshot](./images/webapp.png)
+![Web App Screenshot](./images/webapp.PNG)
 
 
 ## Prerequisites
