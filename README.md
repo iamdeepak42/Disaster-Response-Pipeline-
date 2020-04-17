@@ -34,7 +34,7 @@ The motivation behind this machine learning project is to build a web applicatio
 * re
 * os
 * Matplotlib
-Jupyter notebook and python 3.6 are needed to run the notebooks and python scripts.
+
 
 ## Instructions on running the application
 1. Run the following commands in the project's root directory to set up your database and model.
