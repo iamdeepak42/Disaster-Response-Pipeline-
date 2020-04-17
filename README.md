@@ -44,5 +44,5 @@ Jupyter notebook and python 3.6 are needed to run the notebooks and python scrip
         `python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl`
 2. Run the following command in the app's directory to run your web app.
     `python run.py`
-3. Go to http://0.0.0.0:3001/
+3. Go to http://0.0.0.0:3001/ OR http:localhost:3001
 
