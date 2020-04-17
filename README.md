@@ -24,7 +24,6 @@ The motivation behind this machine learning project is to build a web applicatio
 * Pickle
 * re
 * os
-* warnings
 * Matplotlib
 Jupyter notebook and python 3.6 are needed to run the notebooks and python scripts.
 
