@@ -5,7 +5,7 @@ The motivation behind this machine learning project is to build a web applicatio
 ## Table of contents
 * [Data and Code](#data-and-code)
 * [Prerequisites](#prerequisites)
-* [Graphs and Screenshot](#Graphs and Screenshot)
+* [Graphs and Screenshot](#Graphs-and-Screenshot)
 * [Instructions on running the application](#instructions-on-running-the-application)
 
 ## Data and Code
