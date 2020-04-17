@@ -5,12 +5,18 @@ The motivation behind this machine learning project is to build a web applicatio
 ## Table of contents
 * [Data and Code](#data-and-code)
 * [Prerequisites](#prerequisites)
+* [Graphs and Screenshot](#Graphs and Screenshot)
 * [Instructions on running the application](#instructions-on-running-the-application)
 
 ## Data and Code
 * The ETL data pipeline code is contained in the data/process_data.py file. This pipeline reads the dataset, cleans the data, and then stores the cleaned data in a SQLite database. 
 * The machine learning pipeline code is contained in the models/train_classifier.py file. The pipeline uses NLTK, scikit-learn's Pipeline and GridSearchCV to output a final trained model that uses the message column to predict classification for 36 categories. The trained model is exported to a pickle file to be used by the web app for predictions. 
 * The code for the Flask web app is contained in the app folder and the main script for the application is the run.py file. 
+
+## Graphs and Screenshot
+![Genre Distribution](./images/genre_distribution.png)
+![Message Categories](./images/category_distribution.png)
+![Web App Screenshot](./images/webapp.png)
 
 
 ## Prerequisites
