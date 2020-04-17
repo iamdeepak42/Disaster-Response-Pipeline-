@@ -1,13 +1,15 @@
 import json
 import plotly
 import pandas as pd
-
+import plotly.express as px
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
 
 from flask import Flask
 from flask import render_template, request, jsonify
 from plotly.graph_objs import Bar
+from plotly.graph_objs import Pie
+from plotly.graph_objs import Scatter
 from sklearn.externals import joblib
 from sqlalchemy import create_engine
 
@@ -26,11 +28,11 @@ def tokenize(text):
     return clean_tokens
 
 # load data
-engine = create_engine('sqlite:///../data/YourDatabaseName.db')
-df = pd.read_sql_table('YourTableName', engine)
+engine = create_engine('sqlite:///../data/DisasterResponse.db')
+df = pd.read_sql_table('messages', engine)
 
 # load model
-model = joblib.load("../models/your_model_name.pkl")
+model = joblib.load("../models/classifier.pkl")
 
 
 # index webpage displays cool visuals and receives user input text for model
@@ -45,23 +47,44 @@ def index():
     
     # create visuals
     # TODO: Below is an example - modify to create your own visuals
+
+    category_names = df.iloc[:,4:].sum().sort_values(ascending = False).index
+    category_counts = df.iloc[:,4:].sum().sort_values(ascending = False).values
+
     graphs = [
         {
             'data': [
-                Bar(
-                    x=genre_names,
-                    y=genre_counts
+                Pie(
+                    labels=genre_names,
+                    values=genre_counts,
+                    hole=0.4
                 )
             ],
 
             'layout': {
-                'title': 'Distribution of Message Genres',
+                'title': 'Distribution of Message Genres'
+            }
+
+         },
+        
+        {
+            'data': [
+                Bar(
+                    x=category_names,
+                    y=category_counts
+                )
+            ],
+
+            'layout': {
+                'title': 'Distribution of Message Categories',
                 'yaxis': {
                     'title': "Count"
                 },
                 'xaxis': {
-                    'title': "Genre"
-                }
+                    'title': "Categories"
+                },
+                'textposition': 'auto',
+                'color':'red'
             }
         }
     ]
